@@ -1,0 +1,28 @@
+.program blink
+.side_set 1 opt
+
+.wrap_target
+    out x, 1        side 0 [2]
+    jmp !x pular    side 1 [5]
+    nop             side 1 [4]
+pular:
+    nop             side 0 [4]
+.wrap
+
+% c-sdk {
+#include "hardware/clocks.h"
+
+static inline void blink_program_init(PIO pio, uint sm, uint offset, uint pin) {
+    pio_sm_config c = blink_program_get_default_config(offset);
+    sm_config_set_out_pins(&c, pin, 1);
+    sm_config_set_sideset_pins(&c, pin);
+    pio_gpio_init(pio, pin);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+   // Mude de 8.000.000 para 4.000.000 (Metade da velocidade)
+    float div = clock_get_hz(clk_sys) / 4000000.0;
+    sm_config_set_clkdiv(&c, div);
+    sm_config_set_out_shift(&c, false, true, 24);
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_enabled(pio, sm, true);
+}
+%}
