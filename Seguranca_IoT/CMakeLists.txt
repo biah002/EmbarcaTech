@@ -1,4 +1,3 @@
-# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
     set(USERHOME $ENV{USERPROFILE})
 else()
@@ -29,18 +28,18 @@ add_compile_definitions(LWIP_HTTPC_HAVE_FILE_IO=0)
 add_compile_definitions(LWIP_HTTPC_HAVE_FILE_IO=0)
 add_compile_definitions(HTTPC_DEBUG=1)
 
-# Define o executável (APENAS UMA VEZ!)
+# Define o executável 
 add_executable(Projeto_Finale 
-    Projeto_Finale.c 
-    ssd1306.c
-)
+    src/Projeto_Finale.c 
+    src/ssd1306.c
+    )
 
 # Habilita o printf pelo cabo USB
 pico_enable_stdio_usb(Projeto_Finale 1)
 pico_enable_stdio_uart(Projeto_Finale 0)
 
 # Gera o header do PIO
-pico_generate_pio_header(Projeto_Finale ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
+pico_generate_pio_header(Projeto_Finale ${CMAKE_CURRENT_LIST_DIR}/src/blink.pio)
 
 # Vincula as bibliotecas
 target_link_libraries(Projeto_Finale 
