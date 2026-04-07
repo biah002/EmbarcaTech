@@ -6,16 +6,21 @@ Sistema de monitoramento de segurança inteligente com telemetria em nuvem e int
 
 📋 Sobre o Projeto
 
-Este projeto foi desenvolvido como parte do programa EmbarcaTech. Ele transforma uma Raspberry Pi Pico W num sistema de segurança capaz de detetar intrusões, monitorizar a temperatura e enviar dados para a plataforma ThingSpeak.
+Este projeto foi desenvolvido como parte do programa EmbarcaTech. 
+Ele transforma uma Raspberry Pi Pico W num sistema de segurança capaz de detetar intrusões, monitorizar a temperatura e enviar dados para a plataforma ThingSpeak.
 
 
 
 🚀 Funcionalidades
 
 Monitoramento: Deteta movimentos via Joystick (Eixos X/Y).
+
 Alarme: Feedback sonoro (Buzzer) e visual (LED RGB) em caso de intrusão.
+
 IoT: Envio automático do contador de alertas para a nuvem via HTTP.
+
 Interface: Menu de seleção e status do sistema num display OLED SSD1306.
+
 Entretenimento: Inclui um mini-game interativo para demonstração de performance.
 
 
