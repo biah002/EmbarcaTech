@@ -292,10 +292,10 @@ int main() {
             ssd1306_draw_string(&display, 20, 5, 1, " SELECIONE: ");
             if (selecao == 0) { // MODO MONITORAMENTO
                 ssd1306_draw_string(&display, 10, 30, 1, "> MONITORAMENTO");
-                ssd1306_draw_string(&display, 20, 45, 1, "  JOGUINHO");
+                ssd1306_draw_string(&display, 20, 45, 1, "  GAME");
             } else {
                 ssd1306_draw_string(&display, 20, 30, 1, "  MONITORAMENTO");
-                ssd1306_draw_string(&display, 10, 45, 1, "> JOGUINHO");
+                ssd1306_draw_string(&display, 10, 45, 1, "> GAME");
             }
             ssd1306_show(&display);
             if (gpio_get(BOTAO_A) == 0) {
