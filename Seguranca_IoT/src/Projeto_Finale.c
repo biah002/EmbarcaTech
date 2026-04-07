@@ -8,8 +8,8 @@
 #include <string.h>
 
 // Definições de hardware e credenciais de rede
-#define WIFI_SSID "Biah" // Nome do Wifi
-#define WIFI_PASSWORD "senha12345678" // Senha do Wifi
+#define WIFI_SSID "Biah" 
+#define WIFI_PASSWORD "senha12345678" 
 
 // Pinos dos componentes (LEDs, Buzzer, Joystick e Botões)
 #define LED_RED 13
